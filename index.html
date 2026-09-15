@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The First Academy — Student Gateway</title>
+<meta name="description" content="The First Academy student gateway: grade-matched, certificate-earning learning sites and skill-building games for Grades 4–12." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="top-bar">
+    <span class="top-bar-note">🇦🇪 <span data-i18n="taglineBadge">Building Brave Tomorrow</span></span>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" id="btnEn" class="active">EN</button>
+      <button type="button" id="btnAr">عربي</button>
+    </div>
+  </div>
+
+  <!-- Official bilingual letterhead: flag + English on the left,
+       small logo + Arabic on the right — this block does not
+       change with the EN/AR toggle. -->
+  <div class="letterhead">
+    <div class="letter-side left">
+      <div class="flag-uae" role="img" aria-label="Flag of the United Arab Emirates">
+        <svg viewBox="0 0 100 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="60" fill="#FFFFFF"/>
+          <rect width="100" height="20" fill="#00732F"/>
+          <rect y="40" width="100" height="20" fill="#000000"/>
+          <rect width="25" height="60" fill="#FF0000"/>
+        </svg>
+      </div>
+      <div class="letter-col en">
+        <p class="strong">UNITED ARAB EMIRATES</p>
+        <p>MINISTRY OF EDUCATION</p>
+        <p>THE FIRST ACADEMY – PRIVATE, AJMAN</p>
+      </div>
+    </div>
+
+    <div class="letter-side right" dir="rtl">
+      <div class="letter-col ar">
+        <p class="strong">الإمارات العربية المتحدة</p>
+        <p>وزارة التربية والتعليم</p>
+        <p>مدرسة الأكاديمية الأولى الخاصة - عجمان</p>
+      </div>
+      <div class="logo-badge">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4bcqYCf6vl8HjqyLT_uE8tNqEz8euqWq0Z9y0kgCaVQ&s=10" alt="The First Academy logo">
+      </div>
+    </div>
+  </div>
+
+  <nav class="site-nav" aria-label="Section navigation">
+    <div class="wrap">
+      <a href="#grades"><span class="nav-icon">🎯</span><span data-i18n="navGrades">Pick your grade</span></a>
+      <a href="#safety"><span class="nav-icon">🛡️</span><span data-i18n="navSafety">Why these links</span></a>
+      <a href="wheel.html"><span class="nav-icon">🎡</span><span data-i18n="navSpinner">Class Spinner</span></a>
+      <a href="#contact"><span class="nav-icon">✉️</span><span data-i18n="navContact">Contact</span></a>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1 data-i18n-html="heroTitle">Every student deserves a <span class="accent">brave</span> start online.</h1>
+      <p data-i18n="heroDesc">Tap your grade, grab a hand-picked list of real learning sites and skill games. No dead ends, no shooters, no Roblox — just things worth your time.</p>
+      <div class="hero-actions">
+        <a href="#grades" class="btn btn-primary" data-i18n="heroCta1">Pick my grade 🚀</a>
+        <a href="#safety" class="btn btn-ghost" data-i18n="heroCta2">Why these links?</a>
+      </div>
+      <div class="hero-chips">
+        <div class="chip"><span class="emoji">🎯</span><span data-i18n="chip1">Matched to your age</span></div>
+        <div class="chip"><span class="emoji">🏅</span><span data-i18n="chip2">Real certificates</span></div>
+        <div class="chip"><span class="emoji">🚫</span><span data-i18n="chip3">No shooters or Roblox</span></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbVU63B5-Lz0-u-4EuUelrSaOQkiod6LW7boL_nSu6Xt725KyR-crINW4c&s=10" alt="The First Academy">
+    </div>
+  </div>
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,32 C240,60 480,0 720,18 C960,36 1200,60 1440,28 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+</section>
+
+<main id="main">
+
+  <!-- ============ GRADE PICKER ============ -->
+  <section class="grades" id="grades">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>🎓 <span data-i18n="gradesTitle">Which grade are you in?</span></h2>
+        <p data-i18n="gradesDesc">Tap your number — the list below changes to match your age group.</p>
+      </div>
+
+      <div class="grade-row" id="gradeRow" role="group" aria-label="Select your grade"></div>
+      <p class="band-note" id="bandNote"></p>
+    </div>
+  </section>
+
+  <!-- ============ RESOURCES ============ -->
+  <section class="resources">
+    <div class="wrap">
+      <div id="resourceOutput"></div>
+    </div>
+  </section>
+
+  <!-- ============ SAFETY / ABOUT ============ -->
+  <section class="safety" id="safety">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>🛡️ <span data-i18n="safetyTitle">Why these links, and not others?</span></h2>
+      </div>
+      <div class="safety-grid">
+        <div class="info-card">
+          <div class="icon-circle">✅</div>
+          <div>
+            <h3 data-i18n="safety1Title">Checked by staff</h3>
+            <p data-i18n="safety1Body">A real teacher looks at every site before it's added — not an algorithm.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon-circle">🎓</div>
+          <div>
+            <h3 data-i18n="safety2Title">Actually teaches you something</h3>
+            <p data-i18n="safety2Body">Coding, math, language, digital skills — real, transferable stuff for your future.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon-circle">🏆</div>
+          <div>
+            <h3 data-i18n="safety3Title">Earns you something</h3>
+            <p data-i18n="safety3Body">Many sites give a badge or certificate when you finish — great for your portfolio.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon-circle">🛡️</div>
+          <div>
+            <h3 data-i18n="safety4Title">No unsafe corners</h3>
+            <p data-i18n="safety4Body">No shooters, no open chat sandboxes like Roblox, no ad-heavy pages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="wave" aria-hidden="true" style="transform:scaleY(-1);">
+    <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,20 C240,40 480,0 720,12 C960,24 1200,40 1440,18 L1440,0 L0,0 Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+  <div class="footer-top wrap">
+    <div class="footer-grid">
+      <div>
+        <h4 data-i18n="footerAboutTitle">The First Academy</h4>
+        <p data-i18n="footerAboutBody">A student gateway pointing learners toward safe, worthwhile, grade-appropriate sites — one click from the school homepage.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footerLinksTitle">Quick links</h4>
+        <ul>
+          <li><a href="#grades" data-i18n="navGrades">Pick your grade</a></li>
+          <li><a href="#safety" data-i18n="navSafety">Why these links</a></li>
+          <li><a href="https://www.firstacademy.org/" target="_blank" rel="noopener" data-i18n="footerMainSite">Main school website</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footerContactTitle">Contact</h4>
+        <ul>
+          <li data-i18n="footerContactDept">ICT Department</li>
+          <li data-i18n="footerContactLoc">Sharjah / Ajman, United Arab Emirates</li>
+          <li><a href="mailto:ict@firstacademy.org">ict@firstacademy.org</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="motto-row">
+    <span data-i18n="motto1">RESPECT</span>
+    <span data-i18n="motto2">BELONG</span>
+    <span data-i18n="motto3">ACHIEVE</span>
+  </div>
+  <div class="wrap footer-bottom">
+    <span data-i18n-html="footerCopy">© <span id="year"></span> The First Academy. Built for students, grades 4–12.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
